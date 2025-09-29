@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Basic Expense Tracker</title>
+    <style>
+        #expense-list {
+            width: 50%;
+        }
+
+        .expense {
+            padding: 12px 10px;
+            color: white;
+            background: #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .delete-btn {
+            padding: 10px 20px;
+            color: white;
+            background: purple;
+            cursor: pointer;
+        }
+
+        .expense:hover {
+            transform: scale(1.05);
+        }
+
+        .delete-btn:hover {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body class="bg-[#1a1a1a] text-white">
+    <div class="container">
+        <div class="min-h-screen flex items-center justify-center">
+            <div class="input-expense-card w-full max-w-2xl flex flex-col items-center justify-center bg-[#262626] border rounded-md">
+                <h1 class="text-2xl font-bold py-5">Expense Tracker</h1>
+
+                <form id="expense-form">
+                    <div class="flex items-stretch space-x-2 justify-center mb-3">
+                        <input type="text" id="expense-name" required
+                            class="py-3 px-2 border border-white rounded-sm" placeholder="Enter Expense">
+
+                        <input type="number" id="expense-amount" required
+                            class="py-3 px-2 border border-white rounded-sm" placeholder="Amount">
+
+                        <button type="submit" id="add-expense-btn"
+                            class="py-3 px-2 flex-1 bg-purple-900 text-white cursor-pointer hover:bg-purple-600 transition duration-300">
+                            Add <br> Expense
+                        </button>
+                    </div>
+                </form>
+
+                <h3 class="text-2xl font-semibold my-3">Expenses</h3>
+                <div id="expense-list" class="hidden display-expense flex flex-col space-y-2"></div>
+
+                <div class="display-total mb-3">
+                    <h4 class="text-lg font-semibold">Total : <span id="total">$0.00</span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
